@@ -11,7 +11,7 @@ export default function TodoList({
   editText,
 }) {
   return (
-    <ul style={{ padding: "5px" }}>
+    <ul className="max-w-[600px] m-[auto] flex flex-col items-center gap-[10px] bg-navyblue text-gray-200">
       {todos.map((todo) => {
         return (
           <TodoItem

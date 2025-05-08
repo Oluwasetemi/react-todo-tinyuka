@@ -1,10 +1,12 @@
+import { FaTrash } from "react-icons/fa";
+
 export default function TodoText({ todo, remove, startEditing }) {
   return (
     <>
       <TodoContext startEditing={startEditing} todo={todo}>
         {todo.text}
       </TodoContext>
-      <TodoDeleteButton remove={remove} />
+      <TodoDeleteButton remove={remove} todoId={todo.id} />
     </>
   );
 }
@@ -17,6 +19,10 @@ export function TodoContext({ startEditing, children, todo }) {
   );
 }
 
-export function TodoDeleteButton({ remove }) {
-  return <button onClick={() => remove(todo.id)}>❌</button>;
+export function TodoDeleteButton({ remove, todoId }) {
+  return (
+    <button className="ml-[10px]" onClick={() => remove(todoId)}>
+      <FaTrash />
+    </button>
+  );
 }

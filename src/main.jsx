@@ -1,12 +1,9 @@
-import "./style.css";
-// import React from "react";
+import React from "react";
+import "./styles/tailwind.css";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import Form from "./components/form.jsx";
 import TodoList from "./components/todolist.jsx";
-
-// console.log(React);
-// console.log(ReactDOM)
 
 function TodoApp() {
   const [todos, setTodos] = React.useState([]);
