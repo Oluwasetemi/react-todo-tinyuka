@@ -6,18 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/output.css --watch"
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.5",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^4.1.5",
-    "vite": "^4.3.9"
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^6.3.5"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
+    "tailwindcss": "^4.1.5",
+    "@tailwindcss/vite": "^4.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0"
