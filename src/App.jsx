@@ -1,9 +1,18 @@
-import Greeting from "./components/Greeting";
+import Greeting from "./components/greeting";
 
 export default function App() {
   return (
     <div className="flex items-center border-2 border-green-500 h-screen">
-      <Greeting />
+      {/* {Greeting({ name: 'Oluwasetemi' })} */}
+      {/* <Greeting name='Oluwasetemi' children={`<h1> Hey I am a special children prop </h1>`} /> */}
+      <Greeting name="Oluwasetemi" onGreeting={() => console.log("greeting")}>
+        <h1> Hey I am a special children prop </h1>
+        <p className="class" id="id">
+          danger
+        </p>
+        <pre>1</pre>
+        <code>2</code>
+      </Greeting>
       <h1 className="text-red-500">Hello</h1>
       <p>World</p>
       <img
