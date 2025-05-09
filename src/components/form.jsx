@@ -12,7 +12,7 @@ export default function Form({ createTodo, setText, text }) {
           setText(e.target.value);
         }}
       />
-      <button className="ml-2 bg-yellow-400 hover:bg-yellow-600 px-[25px] py-[5px] mt-[20px] text-gray-700 rounded mb-[20px] font-semibold cursor-pointer" type="submit">
+      <button className="ml-2 bg-yellow-400 hover:bg-yellow-600 px-[25px] py-[5px] mt-[20px] text-gray-700 rounded mb-[20px] font-semibold" type="submit">
         Add Todo
       </button>
     </form>
