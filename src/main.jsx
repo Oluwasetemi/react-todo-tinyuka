@@ -1,61 +1,9 @@
-import "./style.css";
 import React from "react";
+import "./styles/tailwind.css";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-
-console.log(React);
-// console.log(ReactDOM)
-
-function Form() {
-  return (
-    <form onSubmit={createTodo}>
-      <input
-        type="text"
-        placeholder="enter a new todo"
-        value={text}
-        onChange={(e) => {
-          console.log(e.target.value);
-          setText(e.target.value);
-        }}
-      />
-      <button type="submit">Add ToDo</button>
-    </form>
-  );
-}
-
-function TodoList() {
-  return (
-    <ul style={{ padding: "5px" }}>
-      {todos.map((todo) => {
-        return (
-          <li key={todo.id} style={{ display: "flex" }}>
-            {editingId === todo.id ? (
-              <>
-                <input
-                  value={editText}
-                  onChange={(e) => setEditText(e.target.value)}
-                  onBlur={saveEdit}
-                  onKeyDown={handleKeyDown}
-                  // autoFocus
-                />
-              </>
-            ) : (
-              <>
-                <span
-                  style={{ flex: 1 }}
-                  onDoubleClick={() => startEditing(todo)}
-                >
-                  {todo.text}
-                </span>
-                <button onClick={() => remove(todo.id)}>❌</button>
-              </>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
+import Form from "./components/form.jsx";
+import TodoList from "./components/todolist.jsx";
 
 function TodoApp() {
   const [todos, setTodos] = React.useState([]);
@@ -73,6 +21,14 @@ function TodoApp() {
   };
 
   const remove = (id) => setTodos(todos.filter((todo) => todo.id !== id));
+
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
 
   const startEditing = (todo) => {
     setEditingId(todo.id);
@@ -99,7 +55,7 @@ function TodoApp() {
 
   return (
     <div id="todoapp">
-      <form onSubmit={createTodo}>
+      {/* <form onSubmit={createTodo}>
         <input
           type="text"
           placeholder="enter a new todo"
@@ -110,8 +66,9 @@ function TodoApp() {
           }}
         />
         <button type="submit">Add ToDo</button>
-      </form>
-      <ul style={{ padding: "5px" }}>
+      </form> */}
+      <Form createTodo={createTodo} setText={setText} text={text} />
+      {/* <ul style={{ padding: "5px" }}>
         {todos.map((todo) => {
           return (
             <li key={todo.id} style={{ display: "flex" }}>
@@ -139,7 +96,18 @@ function TodoApp() {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+      <TodoList
+        todos={todos}
+        setEditText={setEditText}
+        startEditing={startEditing}
+        remove={remove}
+        saveEdit={saveEdit}
+        handleKeyDown={handleKeyDown}
+        editingId={editingId}
+        editText={editText}
+        toggleTodo={toggleTodo}
+      />
     </div>
   );
 }
