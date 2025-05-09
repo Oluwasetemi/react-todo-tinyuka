@@ -7,16 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/output.css --watch"
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/output.css --watch"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.5",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
     "tailwindcss": "^4.1.5",
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.5",
     "@vitejs/plugin-react": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

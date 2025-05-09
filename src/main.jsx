@@ -22,6 +22,14 @@ function TodoApp() {
 
   const remove = (id) => setTodos(todos.filter((todo) => todo.id !== id));
 
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   const startEditing = (todo) => {
     setEditingId(todo.id);
     setEditText(todo.text);
@@ -98,6 +106,7 @@ function TodoApp() {
         handleKeyDown={handleKeyDown}
         editingId={editingId}
         editText={editText}
+        toggleTodo={toggleTodo}
       />
     </div>
   );
