@@ -2,15 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-    --color-btnBg: oklch(79.5% 0.184 86.047);
-    --color-formBg: #162456;
-    --color-text: #e5e7eb;
-    --color-btnHover: oklch(68.1% 0.162 75.834);
-    --color-primaryStatText: #f1f5f9;
-    --color-secondaryStatText:  oklch(68.1% 0.162 75.834);
-
+  --color-btnBg: oklch(79.5% 0.184 86.047);
+  --color-formBg: #162456;
+  --color-text: #e5e7eb;
+  --color-btnHover: oklch(68.1% 0.162 75.834);
+  --color-primaryStatText: #f1f5f9;
+  --color-secondaryStatText: oklch(68.1% 0.162 75.834);
 }
-
 
 body {
   font-family: "Playfair Display", serif;
