@@ -12,6 +12,11 @@ function TodoApp() {
   const [editingId, setEditingId] = React.useState(null);
   const [editText, setEditText] = React.useState("");
 
+
+  const todosLength = todos.length;
+  const checkedTodo = todos.filter(item => item.completed).length;
+  const percentageChecked = Math.round((checkedTodo / todosLength) * 100); 
+
   const createTodo = (e) => {
     e.preventDefault();
     if (!text.trim()) return;
@@ -54,7 +59,7 @@ function TodoApp() {
   };
 
   return (
-    <div id="todoapp">
+    <div id="todoapp" className="mt-[100px">
       {/* <form onSubmit={createTodo}>
         <input
           type="text"
@@ -67,7 +72,7 @@ function TodoApp() {
         />
         <button type="submit">Add ToDo</button>
       </form> */}
-      <Form createTodo={createTodo} setText={setText} text={text} />
+      <Form setTodos={setTodos} todosLength={todosLength} createTodo={createTodo} setText={setText} text={text} />
       {/* <ul style={{ padding: "5px" }}>
         {todos.map((todo) => {
           return (
@@ -107,6 +112,9 @@ function TodoApp() {
         editingId={editingId}
         editText={editText}
         toggleTodo={toggleTodo}
+        todosLength={todosLength}
+        checkedTodo={checkedTodo}
+        percentageChecked={percentageChecked}
       />
     </div>
   );

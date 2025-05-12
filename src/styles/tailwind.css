@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --color-btnBg: oklch(79.5% 0.184 86.047);
+  --color-formBg: #162456;
+  --color-text: #e5e7eb;
+  --color-btnHover: oklch(68.1% 0.162 75.834);
+  --color-primaryStatText: #f1f5f9;
+  --color-secondaryStatText: oklch(68.1% 0.162 75.834);
+}
+
 body {
   font-family: "Playfair Display", serif;
+  margin-top: 70px;
 }
