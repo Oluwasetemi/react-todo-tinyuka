@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Greeting(props) {
   const name = props.name;
   const children = props.children;
