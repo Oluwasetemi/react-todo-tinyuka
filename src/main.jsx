@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles/tailwind.css";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
@@ -12,10 +11,9 @@ function TodoApp() {
   const [editingId, setEditingId] = React.useState(null);
   const [editText, setEditText] = React.useState("");
 
-
   const todosLength = todos.length;
-  const checkedTodo = todos.filter(item => item.completed).length;
-  const percentageChecked = Math.round((checkedTodo / todosLength) * 100); 
+  const checkedTodo = todos.filter((item) => item.completed).length;
+  const percentageChecked = Math.round((checkedTodo / todosLength) * 100);
 
   const createTodo = (e) => {
     e.preventDefault();
@@ -72,7 +70,13 @@ function TodoApp() {
         />
         <button type="submit">Add ToDo</button>
       </form> */}
-      <Form setTodos={setTodos} todosLength={todosLength} createTodo={createTodo} setText={setText} text={text} />
+      <Form
+        setTodos={setTodos}
+        todosLength={todosLength}
+        createTodo={createTodo}
+        setText={setText}
+        text={text}
+      />
       {/* <ul style={{ padding: "5px" }}>
         {todos.map((todo) => {
           return (

@@ -5,4 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // setup config for react
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  esbuild: {
+    jsxInject: `import React from "react";`,
+  },
 });
