@@ -13,12 +13,6 @@ export default function TodoItem({
 }) {
   return (
     <li className="w-full flex items-center gap-2 p-2 rounded">
-      <input
-        type="checkbox"
-        checked={todo.completed}
-        onChange={() => toggleTodo(todo.id)}
-        className="w-4 h-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400"
-      />
       {editingId === todo.id ? (
         <input
           value={editText}
@@ -29,7 +23,12 @@ export default function TodoItem({
           autoFocus
         />
       ) : (
-        <TodoText todo={todo} startEditing={startEditing} remove={remove} />
+        <TodoText
+          todo={todo}
+          startEditing={startEditing}
+          remove={remove}
+          toggleTodo={toggleTodo}
+        />
       )}
     </li>
   );

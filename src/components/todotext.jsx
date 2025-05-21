@@ -1,15 +1,24 @@
 import { FaTrash } from "react-icons/fa";
 
-export default function TodoText({ todo, remove, startEditing }) {
+export default function TodoText({ todo, remove, startEditing, toggleTodo }) {
   return (
-    <>
-      <TodoContext startEditing={startEditing} todo={todo}>
-        <span className={`flex-1 ${todo.completed ? 'line-through text-gray-400' : ''}`}>
+    <div className="flex items-center flex-1">
+      <label className="flex items-center flex-1 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => toggleTodo(todo.id)}
+          className="w-4 h-4 rounded border-gray-300 text-yellow-400 focus:ring-yellow-400 mr-2"
+        />
+        <span
+          className={`flex-1 ${todo.completed ? 'line-through text-gray-400' : ''}`}
+          onDoubleClick={() => startEditing(todo)}
+        >
           {todo.text}
         </span>
-      </TodoContext>
+      </label>
       <TodoDeleteButton remove={remove} todoId={todo.id} />
-    </>
+    </div>
   );
 }
 
